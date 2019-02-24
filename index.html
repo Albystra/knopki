@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="Bootstrappers/css/bootstrap.min.css">
+</head>
+<body>
+	<button type="button" class="btn">btn</button>
+	<button type="button" class="btn-primary">Primary</button>
+	<button type="button" class="btn-secondary">Secondary</button>
+	<button type="button" class="btn-success">Success</button>
+	<button type="button" class="btn-danger">Danger</button>
+	<button type="button" class="btn-warning">Warning</button>
+	<button type="button" class="btn-info">Info</button>
+	<button type="button" class="btn-light">Light</button>
+	<button type="button" class="btn-dark">Dark</button>
+	<button type="button" class="btn-link">Link</button>
+	<button type="button" class="btn-outline-danger">Outline-danger</button>
+	<button type="button" class="btn-outline-dark">Outline-dark</button>
+
+	<br>
+	<br>
+
+	<div class="container text-center"><h1 id="score">0</h1></div>
+
+	<br>
+	<br>
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm">
+				<button type="button" class="btn-secondary">Secondary</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-success">Success</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-danger">Danger</button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-sm">
+				<button type="button" class="btn-warning">Warning</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-info">Info</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-light">Light</button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-sm">
+				<button type="button" class="btn-primary">Primary</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-dark">Dark</button>
+			</div>
+			<div class="col-sm">
+				<button type="button" class="btn-link">Link</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="Bootstrappers/js/jquery-3.3.1.min.js"></script>
+	<script src="Bootstrappers/js/popper.min.js"></script>
+	<script src="Bootstrappers/js/bootstrap.min.js"></script>
+
+	<script>
+		$(".col-sm").css("min-height", "200px");
+		$(".col-sm").addClass("text-center");
+
+		var score = 0;
+		var buttons = $("button");
+		$('button').click(function(){
+			var buttNum = Math.floor(Math.random()*$("button").lenght);
+			if ($(this).hasClass("btn-primary") ==true){
+				score+=1;
+				$("#score").html(score);
+			}
+			$("button").attr("class", "");
+			$(buttons[buttNum]).addClass("btn");
+			$(buttons[buttNum]).addClass("btn-primary");
+		});
+	</script>
+</body>
+</html>
